@@ -11,7 +11,7 @@ public class Client extends Person implements Stakeholder {
     protected int age;
     protected CompanyData comp;
 
-    protected Client() {
+    protected Client(){
 
     }
 
