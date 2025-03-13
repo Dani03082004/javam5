@@ -1,4 +1,4 @@
-package com.example.softlearning_springboot.infrastructure.persistence.jpa;
+/*package com.example.softlearning_springboot.infrastructure.persistence.jpa;
 
 import java.util.List;
 import java.util.Optional;
@@ -32,3 +32,4 @@ public interface JpaOrderRepository extends JpaRepository<OrderDTO, Integer>, Or
     @Transactional
     void deleteByReference(int reference);
 }
+*/

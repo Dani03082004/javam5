@@ -1,4 +1,4 @@
-package com.example.softlearning_springboot.applicationcore.entity.orders.persistence;
+/*package com.example.softlearning_springboot.applicationcore.entity.orders.persistence;
 
 import java.util.List;
 import java.util.Optional;
@@ -15,3 +15,4 @@ public interface OrderRepository {
 
     public void deleteById(int reference);
 }
+*/
