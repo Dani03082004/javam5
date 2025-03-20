@@ -14,22 +14,7 @@ public class ProductTest {
     }
 
     @Test
-    void testGetContactData() {
-
-    }
-
-    @Test
-    void testGetData() {
-
-    }
-
-    @Test
     void testGetDescription() {
-
-    }
-
-    @Test
-    void testGetDetails() {
 
     }
 
@@ -63,8 +48,4 @@ public class ProductTest {
 
     }
 
-    @Test
-    void testToString() {
-
-    }
 }

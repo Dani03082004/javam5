@@ -9,22 +9,12 @@ public class BookTest {
     }
 
     @Test
-    void testGetContactData() {
-
-    }
-
-    @Test
     void testGetDate_disponibility() {
 
     }
 
     @Test
     void testGetDate_publicated() {
-
-    }
-
-    @Test
-    void testGetDetails() {
 
     }
 
@@ -120,11 +110,6 @@ public class BookTest {
 
     @Test
     void testSetPages() {
-
-    }
-
-    @Test
-    void testToString() {
 
     }
 }

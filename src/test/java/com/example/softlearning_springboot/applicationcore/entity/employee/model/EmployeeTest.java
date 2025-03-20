@@ -3,15 +3,6 @@ package com.example.softlearning_springboot.applicationcore.entity.employee.mode
 import org.junit.jupiter.api.Test;
 
 public class EmployeeTest {
-    @Test
-    void testGetContactData() {
-
-    }
-
-    @Test
-    void testGetData() {
-
-    }
 
     @Test
     void testGetDays() {
@@ -73,8 +64,4 @@ public class EmployeeTest {
 
     }
 
-    @Test
-    void testToString() {
-
-    }
 }

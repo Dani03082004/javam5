@@ -9,16 +9,6 @@ public class OperationTest {
     }
 
     @Test
-    void testGetContactData() {
-
-    }
-
-    @Test
-    void testGetData() {
-
-    }
-
-    @Test
     void testGetDescription() {
 
     }
@@ -68,8 +58,4 @@ public class OperationTest {
 
     }
 
-    @Test
-    void testToString() {
-
-    }
 }

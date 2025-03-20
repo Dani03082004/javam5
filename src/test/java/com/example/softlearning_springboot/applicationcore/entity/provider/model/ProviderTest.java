@@ -9,16 +9,6 @@ public class ProviderTest {
     }
 
     @Test
-    void testGetContactData() {
-
-    }
-
-    @Test
-    void testGetData() {
-
-    }
-
-    @Test
     void testGetInstance() {
 
     }
@@ -68,8 +58,4 @@ public class ProviderTest {
 
     }
 
-    @Test
-    void testToString() {
-
-    }
 }

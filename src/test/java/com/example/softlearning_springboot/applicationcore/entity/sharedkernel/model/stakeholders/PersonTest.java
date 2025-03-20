@@ -24,16 +24,6 @@ public class PersonTest {
     }
 
     @Test
-    void testGetContactData() {
-
-    }
-
-    @Test
-    void testGetData() {
-
-    }
-
-    @Test
     void testGetEmail() {
 
     }
@@ -98,8 +88,4 @@ public class PersonTest {
 
     }
 
-    @Test
-    void testToString() {
-
-    }
 }
