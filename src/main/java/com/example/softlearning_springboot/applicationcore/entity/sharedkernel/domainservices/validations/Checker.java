@@ -51,12 +51,12 @@ public class Checker {
 
     // Función que no sea negativo
     public static int nonNegative(int s) {
-        return (s < 0) ? -2 : 0;
+        return (s < 0) ? -1 : 0;
     }
 
     // Función que comprueba si es cero
     public static int isZero(int s) {
-        return (s == 0) ? 0 : -2;
+        return (s == 0) ? 0 : -1;
     }
 
     // Función que comprueba si es cero o negativo
@@ -110,7 +110,7 @@ public class Checker {
             return -1; 
         }
         if (password.length() < minLength) {
-            return -2; 
+            return -1; 
         }
         return 0; 
     }
@@ -230,7 +230,7 @@ public class Checker {
         return LocalDateTime.of(año, mes, dias, horas, minutos, segundos);
     }
 
-    public static LocalDateTime checkDateTimes(String data) {
+    public static LocalDateTime checkDateTimes(String data) throws DateException{
         try {
             // Verifica si data es nula
             if (data == null) {
@@ -283,8 +283,8 @@ public class Checker {
     
             // Crear y devolver un objeto LocalDateTime
             return LocalDateTime.of(año, mes, dias, horas, minutos, segundos); 
-        } catch (DateException e) {
-            return null;
+        } catch (Exception e) {
+            throw new DateException("Invalid date/time format: " + data);
         }
     }
     

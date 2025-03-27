@@ -103,12 +103,12 @@ public class PhysicalData {
 
     @Override
     public String toString() {
-        return "PhysicalData{" +
+        return "PhysicalData[" +
                 "high=" + high +
                 ", width=" + width +
                 ", length=" + length +
                 ", weight=" + weight +
                 ", fragile=" + fragile +
-                '}';
+                ']';
     }
 }

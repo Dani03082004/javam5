@@ -19,18 +19,23 @@ import com.example.softlearning_springboot.applicationcore.entity.sharedkernel.d
 class CheckerTest {
 
     @Test
-    void testNotNegative() {
+    void testNegative() {
         assertEquals(-1, Checker.NotNegative(-5));
     }
 
     @Test
-    void testNotNullEmptyString() {
-        assertEquals(0, Checker.NotNullEmptyString("TestUnit")); 
+    void testPositive() {
+        assertEquals(0, Checker.NotNegative(5));
     }
 
     @Test
-    void testNotZeroNegative() {
-        assertEquals(0, Checker.NotZeroNegative(3)); 
+    void testNotNullString() {
+        assertEquals(0, Checker.NotNullEmptyString("TestUnit"));
+    }
+
+    @Test
+    void testNullEmptyString() {
+        assertEquals(-1, Checker.NotNullEmptyString(null));
     }
 
     @Test
@@ -39,10 +44,22 @@ class CheckerTest {
     }
 
     @Test
+    void testPasswordNotMinLength() {
+        assertEquals(-1, Checker.PasswordMinLength("al", 3));
+    }
+
+    @Test
     void testCheckDate() throws DateException {
         LocalDate fecha = Checker.checkDate("2025-03-20");
         String resultadofecha = fecha.toString();
-        assertTrue(resultadofecha.equals("2025-03-20"));
+        assertEquals("2025-03-20", resultadofecha);
+    }
+
+    @Test
+    void testCheckBadDate() {
+        assertThrows(DateException.class, () -> {
+            Checker.checkDate("invalid-date");
+        });
     }
 
     @Test
@@ -50,7 +67,14 @@ class CheckerTest {
         LocalDateTime fechahora = Checker.checkDateTime("2025-03-20 10:00:00");
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         String resultadofechahora = fechahora.format(formatter);
-        assertTrue(resultadofechahora.equals("2025-03-20 10:00:00"));
+        assertEquals("2025-03-20 10:00:00", resultadofechahora);
+    }
+
+    @Test
+    void testCheckBadDateTime() {
+        assertThrows(DateException.class, () -> {
+            Checker.checkDateTime("invalid-datetime");
+        });
     }
 
     @Test
@@ -58,11 +82,24 @@ class CheckerTest {
         LocalDateTime datehour = Checker.checkDateTimes("19-03-2025 10:00:00");
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
         String resultadofechahora = datehour.format(formatter);
-        assertTrue(resultadofechahora.equals("19-03-2025 10:00:00"));}
+        assertEquals("19-03-2025 10:00:00", resultadofechahora);
+    }
+
+    @Test
+    void testCheckBadDateTimes() {
+        assertThrows(DateException.class, () -> {
+            Checker.checkDateTimes("invalid-datetime");
+        });
+    }
 
     @Test
     void testHasSpaces() {
         assertTrue(Checker.hasSpaces("Test Unit"));
+    }
+
+    @Test
+    void testNoSpaces() {
+        assertFalse(Checker.hasSpaces("Testunit"));
     }
 
     @Test
@@ -76,13 +113,28 @@ class CheckerTest {
     }
 
     @Test
+    void testIsNotegativeInt() {
+        assertFalse(Checker.isNegativeInt(3));
+    }
+
+    @Test
     void testIsValidEmailFormat() {
         assertTrue(Checker.isValidEmailFormat("tunit@gmail.com"));
     }
 
     @Test
+    void testIsNotValidEmailFormat() {
+        assertTrue(Checker.isValidEmailFormat("t@jpa.com"));
+    }
+
+    @Test
     void testIsZero() {
-        assertEquals(0, Checker.isZero(0)); 
+        assertEquals(0, Checker.isZero(0));
+    }
+
+    @Test
+    void testIsNotZero() {
+        assertEquals(-1, Checker.isZero(1));
     }
 
     @Test
@@ -91,8 +143,13 @@ class CheckerTest {
     }
 
     @Test
+    void testNotMinLength() {
+        assertFalse(Checker.minLength("Ja", 3));
+    }
+
+    @Test
     void testMinValue() {
-        assertEquals(0,(Checker.minValue(10, 5)));
+        assertEquals(0, (Checker.minValue(10, 5)));
     }
 
     @Test
@@ -101,7 +158,17 @@ class CheckerTest {
     }
 
     @Test
+    void testAndNegative() {
+        assertEquals(-1, Checker.nonNegative(-8));
+    }
+
+    @Test
     void testValidarDNI() {
         assertEquals(0, Checker.validarDNI("12345678A"));
+    }
+
+    @Test
+    void testValidarBadDNI() {
+        assertEquals(-1, Checker.validarDNI("12345678"));
     }
 }

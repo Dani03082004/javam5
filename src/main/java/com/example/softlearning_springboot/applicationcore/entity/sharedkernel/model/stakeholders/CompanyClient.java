@@ -8,7 +8,7 @@ public class CompanyClient extends Client {
     protected CompanyData comp;
 
     protected CompanyClient() {
-
+        this.comp = new CompanyData();
     }
 
     public static CompanyClient getInstance(int workers, String socialReason, String dni, int age)
